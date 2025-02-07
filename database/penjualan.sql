@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 01, 2025 at 03:53 PM
+-- Generation Time: Feb 07, 2025 at 05:17 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -34,7 +34,7 @@ CREATE TABLE `customers` (
   `email` varchar(100) NOT NULL,
   `phone` varchar(20) DEFAULT NULL,
   `address` text DEFAULT NULL,
-  `foto` varchar(255) NOT NULL,
+  `foto` varchar(255) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -44,7 +44,8 @@ CREATE TABLE `customers` (
 
 INSERT INTO `customers` (`customer_id`, `nik`, `name`, `email`, `phone`, `address`, `foto`, `created_at`) VALUES
 (1, '3208537891950004', 'Muhammad Hidayat', 'hidayat@gmail.com', '085967028702', 'Cilimus, Kuningan', 'assets/uploads/user/IMG_20240924_103525.png', '2025-01-19 14:41:53'),
-(4, '3208234576519865', 'Syahrani', 'syah@gmail.com', '087656275431', 'Cirebon', 'assets/uploads/user/OIP (1).jpg', '2025-02-01 14:51:54');
+(4, '3208234576519865', 'Syahrani', 'syah@gmail.com', '087656275431', 'Cirebon', 'assets/uploads/user/OIP (1).jpg', '2025-02-01 14:51:54'),
+(5, '324523454321', 'Saepullah', 'epul@gmail.com', '089756784321', 'Bandung', NULL, '2025-02-07 16:09:49');
 
 -- --------------------------------------------------------
 
@@ -59,7 +60,7 @@ CREATE TABLE `mobil` (
   `price` varchar(20) NOT NULL,
   `warna` varchar(50) NOT NULL,
   `stock` int(11) DEFAULT 0,
-  `foto` varchar(300) NOT NULL,
+  `foto` varchar(300) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -69,7 +70,7 @@ CREATE TABLE `mobil` (
 
 INSERT INTO `mobil` (`mobil_id`, `model`, `brand`, `price`, `warna`, `stock`, `foto`, `created_at`) VALUES
 (1, 'Civic', 'Honda', '300000000', 'Putih', 9, 'assets/uploads/mobil/civic.jpeg', '2025-01-19 13:49:23'),
-(2, 'Avanza', 'Toyota', '200000000', 'Putih', 14, 'assets/uploads/mobil/avanza.jpeg', '2025-01-19 13:49:23'),
+(2, 'Avanza', 'Toyota', '200000000', 'Putih', 13, 'assets/uploads/mobil/avanza.jpeg', '2025-01-19 13:49:23'),
 (3, 'Fortuner', 'Toyota', '500000000', 'Abu-abu', 4, 'assets/uploads/mobil/fortuner.jpeg', '2025-01-19 13:49:23'),
 (4, 'Xenia', 'Daihatsu', '190000000', 'Merah', 20, 'assets/uploads/mobil/xenia.jpeg', '2025-01-19 13:49:23'),
 (5, 'Pajero', 'Mitsubishi', '550000000', 'Silver', 8, 'assets/uploads/mobil/pajero.jpeg', '2025-01-19 13:49:23'),
@@ -100,7 +101,8 @@ CREATE TABLE `sale` (
 
 INSERT INTO `sale` (`sale_id`, `customer_id`, `mobil_id`, `user_id`, `sale_date`, `total_price`, `created_at`, `payment_type`) VALUES
 (1, 1, 3, 4, '2025-01-19', '500000000', '2025-01-19 16:31:12', 'Cash'),
-(4, 4, 7, 4, '2025-02-01', '350000000', '2025-02-01 14:52:41', 'Cash');
+(4, 4, 7, 4, '2025-02-01', '350000000', '2025-02-01 14:52:41', 'Cash'),
+(5, 4, 2, 4, '2025-02-01', '200000000', '2025-02-01 15:04:04', 'Credit');
 
 -- --------------------------------------------------------
 
@@ -166,19 +168,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `mobil`
 --
 ALTER TABLE `mobil`
-  MODIFY `mobil_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `mobil_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `sale`
 --
 ALTER TABLE `sale`
-  MODIFY `sale_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `sale_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `users`
