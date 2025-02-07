@@ -22,8 +22,8 @@ Password
 
 untuk cara jalanin project ini cukup download atau clone project ini, jika download nanti akan berbentuk rar, kemudian extrak ke dalam folder htdocs dan import database penjualan.sql yang ada di dalam folder database ke dalam phpmyadmin, kemudian tinggal jalankan saja projectnya. 
 
-tampilan halaman login 
-![image](https://github.com/user-attachments/assets/f03ed34a-fb37-4375-9cb4-66745d698184)
+tampilan halaman login
+![image](https://github.com/user-attachments/assets/03ed34a-fb37-4375-9cb4-66745d698184)
 
 tampilan dashboard admin
 ![image](https://github.com/user-attachments/assets/2dab7200-06bc-44b5-880f-47f2181997e8)
