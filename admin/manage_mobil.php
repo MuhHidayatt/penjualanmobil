@@ -29,7 +29,7 @@
         if (!empty($_FILES['foto']['name'])) {
             $foto = $_FILES['foto']['name'];
             $foto_tmp = $_FILES['foto']['tmp_name'];
-            $foto_upload_path = 'assets/uploads/mobil/civic.jpeg' . basename($foto);
+            $foto_upload_path = 'assets/uploads/mobil/' . basename($foto);
             if (move_uploaded_file($foto_tmp, $foto_upload_path)) {
                 echo "File uploaded to: " . $foto_upload_path;
             } else {
@@ -59,7 +59,8 @@
             // Add new mobil
             $sql = "INSERT INTO mobil (model, brand, price, warna, stock, foto) VALUES (?, ?, ?, ?, ?, ?)";
             $stmt = $conn->prepare($sql);
-            $stmt->bind_param("ssdsis", $model, $brand, $price, $warna, $stock, $foto_upload_path);
+            $stmt->bind_param("sssdis", $model, $brand, $price, $warna, $stock, $foto_upload_path);
+
         }
 
         if ($stmt->execute()) {
@@ -70,6 +71,7 @@
             $_SESSION['error_message'] = "Error saving mobil: " . $stmt->error;
         }
     }
+    
 
     // Handle deletion of mobil
     if (isset($_GET['delete'])) {
