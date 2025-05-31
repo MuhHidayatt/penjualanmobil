@@ -22,7 +22,7 @@ Password
 
 untuk cara jalanin project ini cukup download atau clone project ini, jika download nanti akan berbentuk rar, kemudian extrak ke dalam folder htdocs dan import database penjualan.sql yang ada di dalam folder database ke dalam phpmyadmin, kemudian tinggal jalankan saja projectnya. 
 
-Thanks for Watching :)
+Thanks
 
 
 
